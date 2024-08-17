@@ -49,7 +49,7 @@ submitLog.addEventListener("click", function(e){
     // Signed in 
     const user = userCredential.user;
     alert('Successfully Login !')
-    window.location.href = "dashboard.html"
+    window.location.href = "index.html"
   })
   .catch((error) => {
     const errorCode = error.code;
