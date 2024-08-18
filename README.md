@@ -40,15 +40,9 @@ Dotes Blog is designed to be a platform where users can create, edit, and delete
 
 ## Screenshots
 
-Add some screenshots here to showcase your project.
-
 ## Contributing
 
 Contributions are welcome! If you find any issues or want to contribute to the project, feel free to open a pull request or raise an issue.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
