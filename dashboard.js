@@ -1,7 +1,7 @@
 import { auth } from "./firebase.mjs";
 import { signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
-// 
+// Authentication Check
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
