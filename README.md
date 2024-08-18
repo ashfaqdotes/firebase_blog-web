@@ -7,11 +7,6 @@ Dotes Blog is a simple and responsive blog application developed as a part of th
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Project Overview
