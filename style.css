@@ -46,7 +46,7 @@ body {
     margin-top: 60px;
     width: 100%;
     height: calc(70vh - 20px);
-    background: url(../img/header.jpg);
+    background: url(img/header.jpg);
     background-size: cover;
     display: flex;
     justify-content: center;
