@@ -1,5 +1,6 @@
 import { db, auth } from "./firebase.mjs";
-import { collection , collectionGroup, addDoc, onSnapshot, deleteDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { collection, collectionGroup, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
 
 let addPost = document.getElementById("addpostbtn");
 let postheadInput = document.getElementById("posthead");
@@ -12,7 +13,7 @@ let userEmail = document.getElementById("userEmail");
 auth.onAuthStateChanged((user) => {
   if (user) {
     console.log("User ID: ", user.email);
-    if (userEmail) { 
+    if (userEmail) {
       userEmail.innerHTML = user.email;
     }
 
@@ -21,7 +22,7 @@ auth.onAuthStateChanged((user) => {
     if (addPost) {
       addPost.addEventListener('click', function (event) {
         event.preventDefault();
-        addNewUserPost(user.uid , user.email);  // Pass the user ID
+        addNewUserPost(user.uid, user.email);  // Pass the user ID
       });
     }
 
@@ -46,7 +47,7 @@ async function addNewUserPost(userId, userEmail) {
       posthead: postheadInput.value,
       postdis: postdisInput.value,
       postTime: new Date(),
-      posterEmail : userEmail
+      posterEmail: userEmail
     });
 
     postheadInput.value = "";
@@ -67,8 +68,8 @@ function fetchAndDisplayUserPosts(userId) {
       showblog.innerHTML = '';
     }
 
-    snapshot.forEach((doc) => {
-      let blogPost = doc.data();
+    snapshot.forEach((docSnapshot) => {
+      let blogPost = docSnapshot.data();
       let postElement = document.createElement('div');
       postElement.classList.add('blog-card');
       postElement.innerHTML = `  
@@ -81,8 +82,8 @@ function fetchAndDisplayUserPosts(userId) {
       // Adding Event Listeners for Delete and Edit buttons
       postElement.querySelector('.deletebtn').addEventListener('click', async () => {
         try {
-          await deleteDoc(doc(db, `users/${userId}/posts`, doc.id));
-          console.log("Document deleted with ID: ", doc.id);
+          await deleteDoc(doc(db, `users/${userId}/posts`, docSnapshot.id));
+          console.log("Document deleted with ID: ", docSnapshot.id);
         } catch (e) {
           console.error("Error deleting document: ", e);
         }
@@ -136,3 +137,4 @@ function fetchAndDisplayAllPosts() {
 
 
 }
+
