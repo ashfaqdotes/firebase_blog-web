@@ -17,18 +17,24 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="img/logo.png" width="200" class="logo" alt="" class="d-inline-block align-text-top">
       </a>
       <div class="collapse navbar-collapse ">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav mr-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li> -->
           <li class="nav-item">
-            <a type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
-              aria-current="page">Sign-Up | Sign-In</a>
+            <a id="dashboardBtn" class="nav-link" href="dashboard.html">Dashboard</a>
           </li>
         </ul>
+        <form class="form-inline ms-auto">
+          <button id="authButton" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+            data-bs-target="#exampleModal" aria-current="page">Sign-Up | Sign-In</button>
+        </form>
       </div>
     </div>
   </nav>
@@ -40,23 +46,22 @@
         <span class="small">welcome in the world of</span>
         blog
         <span class="no-fill">writing</span>
-      </h1>
-      <a href="#" class="btn">write a blog</a>
-    </div>
+        <!-- </h1>
+      <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn">write a blog</a>
+    </div> -->
   </header>
 
+
   <!-- blog section -->
-  <section class="blogs-section">
-    <div class="blog-card">
-      <img src="img/blog-head.png" class="blog-image" alt="logo">
-      <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
-      <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos
-        porro repellat harum. Adipisci tempora corporis rem ca.</p>
-      <a href="/" class="btn dark">read</a>
+  <section>
+    <div class="text-center text-bg-dark">
+      <h2>All Blogs Updates Here !!!</h2>
     </div>
   </section>
+  <!-- Show Dashboard User data from Firebase -->
+  <section id="displayblogHome" class=" blogs-section">
+  </section>
 
-  <script type="module" src="main.js"></script>
 
   <!-- // Bootstrap JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -122,8 +127,11 @@
       </div>
     </div>
   </div>
-  </div>
-  </div>
+
+
+  <!-- Main JS -->
+  <script type="module" src="database.js"></script>
+  <script type="module" src="main.js"></script>
 
   <!-- Tab Navigation for Switching the Forms -->
   <script>

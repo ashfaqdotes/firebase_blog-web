@@ -11,6 +11,7 @@ onAuthStateChanged(auth, (user) => {
   } else {
     // User is signed out
     // ...
+    // sessionStorage.clear();
     window.location.href = 'index.html'
   }
 });
@@ -19,14 +20,19 @@ onAuthStateChanged(auth, (user) => {
 let signOutButton = document.getElementById("signOutButton");
 if (signOutButton){
   signOutButton.addEventListener('click', () => {
-    signOut(auth).then(() => {
+    let confirmSignOut = confirm('Are you sure you want to sign out?');
+    if (confirmSignOut == true) {
+          signOut(auth).then(() => {
       // Sign-out successful.
-      alert('Sign Out Successful!');
+      // alert('Sign Out Successful!');
       window.location.href = "index.html";
       sessionStorage.clear();
     }).catch((error) => {
       // An error happened.
       alert('Error signing out: ' + error.message);
     });
+      
+    }
+
   });
 }

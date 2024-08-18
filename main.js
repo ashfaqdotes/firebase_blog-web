@@ -1,6 +1,7 @@
 import { auth } from "./firebase.mjs";
 import {
-  createUserWithEmailAndPassword, signInWithEmailAndPassword
+  createUserWithEmailAndPassword, signInWithEmailAndPassword,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 // Sign up
@@ -37,7 +38,8 @@ signUpForm.addEventListener('submit', (event) => {
   let emailLogin = document.getElementById("emailLogin");
   let passwordLogin = document.getElementById("passwordLogin");
   let loginForm = document.getElementById("loginForm");
-
+  let authButton = document.getElementById("authButton");
+  
   loginForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent the form from submitting the traditional way
 
@@ -64,6 +66,31 @@ signUpForm.addEventListener('submit', (event) => {
     }
   });
 
-  
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      authButton.setAttribute("disabled", true);
+    } 
+  })
+
+// Dashboard check Auth
+let dashboard = document.getElementById("dashboardBtn");
+dashboard.addEventListener('click', () => {
+    onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/auth.user
+      const uid = user.uid;
+      authButton.style.display = 'none';
+      // window.location.href = "dashboard.html";
+    } else {
+      // User is signed out
+      sessionStorage.clear();
+      window.location.href = "index.html";
+      
+    }
+  })
+})
+
+
 
 

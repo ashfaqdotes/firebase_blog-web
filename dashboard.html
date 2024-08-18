@@ -19,21 +19,26 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary ">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="200" class="logo" alt="" class="d-inline-block align-text-top">
+        <img src="img/logo.png" width="200" class="logo" alt="logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse ">
-        <ul class="navbar-nav ms-auto">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li> -->
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <button id="signOutButton" type="button" class=" btn btn-outline-danger active">Sign Out</button>
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item ">
+            <!-- <button id="addpostbtn" class="nav-link" href="index.html">+ Add Post</button> -->
+            <button id="authButton" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+              data-bs-target="#exampleModal" aria-current="page">Add Post</button>
           </li>
         </ul>
+        <form class="form-inline ms-auto">
+          <button id="signOutButton" type="button" class=" btn btn-outline-danger active">Sign Out</button>
+        </form>
       </div>
     </div>
   </nav>
@@ -50,8 +55,13 @@
     </div>
   </header> -->
 
+  <!-- Show Dashboard User data from Firebase -->
+  <section id="displayblog" class=" blogs-section">
+
+  </section>
+
   <!-- blog section -->
-  <section class="blogs-section">
+  <!-- <section class="blogs-section">
     <div class="blog-card">
       <img src="img/blog-head.png" class="blog-image" alt="logo">
       <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
@@ -59,9 +69,34 @@
         porro repellat harum. Adipisci tempora corporis rem ca.</p>
       <a href="/" class="btn dark">read</a>
     </div>
-  </section>
+  </section> -->
 
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Or Login account!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Tabs -->
+          <form>
+            <input id="posthead" type="text" placeholder="Blog Heading">
+            <textarea id="postdis" type="text" placeholder="Blog Description"></textarea>
+            <button id="addpostbtn" data-bs-dismiss="modal" type="submit">Add Post</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="module" src="database.js"></script>
   <script type="module" src="dashboard.js"></script>
+
   <!-- Bootstrap JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
