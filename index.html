@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <title>Blog : Homepage</title>
   <!-- Bootstrap CSS CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -12,6 +14,8 @@
   <!-- signup and login CSS -->
   <link rel="stylesheet" href="signup-login.css">
   <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
 </head>
 
@@ -20,7 +24,7 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="200" class="logo" alt="" class="d-inline-block align-text-top">
+        <img src="img/logo.png" width="200" class="logo" alt="logo">
       </a>
       <!-- Navbar Toggler Button -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,11 +34,8 @@
       <!-- Navbar Items -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a id="dashboardBtn" class="nav-link" href="dashboard.html">Dashboard</a>
+          <li class="nav-item mb-2">
+            <a class="btn btn-outline-success " id="dashboardBtn" href="dashboard.html">Dashboard</a>
           </li>
         </ul>
         <form class="form-inline ms-auto">
@@ -49,23 +50,28 @@
   <header class="header">
     <div class="content">
       <h1 class="heading">
-        <span class="small">welcome in the world of</span>
+        <span class="small">welcome to the world of</span>
         blog
         <span class="no-fill">writing</span>
-        <!-- </h1>
-      <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn">write a blog</a>
-    </div> -->
+      </h1>
+      <!-- <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn">write a blog</a> -->
+    </div>
   </header>
 
 
   <!-- blog section -->
-  <section>
-    <div class="text-center text-bg-dark">
-      <h2>All Blogs Updates Here !!!</h2>
+  <section id="blogupdates" class="p-2 text-center bg-dark text-white p-5">
+    <div class="m-0 pt-1 pb-1">
+      <h2 class="m-0">All Blogs Updates Here !!!</h2>
     </div>
   </section>
+
   <!-- Show Dashboard User data from Firebase -->
-  <section id="displayblogHome" class=" blogs-section">
+  <section class="blogs-section bg-light">
+    <div class="container">
+      <div id="displayblogHome" class="pb-4 pt-4 row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4"></div>
+    </div>
+
   </section>
 
 
@@ -107,8 +113,9 @@
                   <input type="password" class="form-control" id="passwordSign">
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Submit</button>
-                <p class="mt-3">Already have an account? <a href="#" id="sign-link" data-bs-toggle="tab"
-                    data-bs-target="#login" role="tab">Login here</a></p>
+                <p class="mt-3">Already have an account? >
+                  <a href="#" id="sign-link" data-bs-toggle="tab" data-bs-target="#login" role="tab">Login here</a>
+                </p>
 
               </form>
             </div>
@@ -152,7 +159,10 @@
       tabNav.click();
     });
   </script>
-
 </body>
+<footer class="p-3 bg-dark text-white text-center">
+  <p>Developed By SMIT-Student With ❤️ For Everyone</p>
+</footer>
+
 
 </html>
