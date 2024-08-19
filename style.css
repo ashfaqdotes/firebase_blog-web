@@ -6,8 +6,9 @@
 
 body {
     width: 100%;
-    position: relative;
+    /* position: relative; */
     font-family: 'poppins', sans-serif;
+    padding: 5px;
 }
 
 ::selection {
@@ -15,7 +16,7 @@ body {
     color: #fff;
 }
 
-.navbar {
+/* .navbar {
     width: 100%;
     height: 60px;
     position: fixed;
@@ -27,20 +28,20 @@ body {
     padding: 0 5vw;
     background: #fff;
     z-index: 9;
-}
+} */
 
-.links-container {
+/* .links-container {
     display: flex;
     list-style: none;
-}
+} */
 
-.link {
+/* .link {
     padding: 10px;
     margin-left: 10px;
     text-decoration: none;
     text-transform: capitalize;
     color: #000;
-}
+} */
 
 .header {
     margin-top: 60px;
@@ -67,7 +68,7 @@ body {
 
 .heading .small {
     display: block;
-    font-size: 40px;
+    font-size: 48px;
 }
 
 .heading .no-fill {
@@ -106,7 +107,7 @@ body {
     line-height: 30px;
 }
 
-.btn.dark {
-    background: #1b1b1b;
+/* .btn.dark {
+    background: warning;
     color: #fff;
-}
+} */

@@ -1,5 +1,8 @@
 import { db, auth } from "./firebase.mjs";
-import { collection, collectionGroup, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import {
+  collection, collectionGroup,
+  addDoc, onSnapshot, deleteDoc, doc,
+} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
 
 let addPost = document.getElementById("addpostbtn");
