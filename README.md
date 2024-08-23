@@ -36,7 +36,6 @@ Dotes Blog is designed to be a platform where users can create, edit, and delete
 - **Sign Up/Login:** Register or log in to create and manage your posts.
 - **Create Post:** Authenticated users can create a new blog post.
 - **Edit/Delete Post:** Users can edit or delete their own posts.
-- **Search:** Use the search bar to find specific posts by keywords.
 
 ## Screenshots
 
