@@ -39,21 +39,28 @@ fetchAndDisplayAllPosts();
 
 // Function to add a new post to the user's collection
 async function addNewUserPost(userId, userEmail) {
-  try {
-    const userPostsCollection = collection(db, `users/${userId}/posts`);
-    const docRef = await addDoc(userPostsCollection, {
-      posthead: postheadInput.value,
-      postdis: postdisInput.value,
-      postTime: new Date(),
-      posterEmail: userEmail,
+  if (postheadInput.value != '' && postdisInput.value != '') {
+    alert('Post added successfully!');
+    try {
+      const userPostsCollection = collection(db, `users/${userId}/posts`);
+      const docRef = await addDoc(userPostsCollection, {
+        posthead: postheadInput.value,
+        postdis: postdisInput.value,
+        postTime: new Date(),
+        posterEmail: userEmail,
 
-    });
-    postheadInput.value = "";
-    postdisInput.value = "";
+      });
+      postheadInput.value = "";
+      postdisInput.value = "";
 
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
+  else {
+    alert('Please enter a post title and description.');
+    return;
   }
 }
 
